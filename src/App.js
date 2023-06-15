@@ -27,9 +27,8 @@ function App() {
       .then(res => res.json())
       .then(result =>{
         setForecast(result);
-        // JSON.parse(result);
         console.log(result.forecast);
-        console.log(result.forecast.forecastday[0]);
+        // console.log(result.forecast.forecastday[0]);
       });
 
     }
@@ -87,60 +86,63 @@ const handleChange = (e) => {
               value={query}
               onKeyPress={search}></input>
             </div>
-            <div className="location-box">
-              <div className="location">
-              {weather.location.name} , {weather.location.country}
+            {(typeof weather.current != "undefined") ? (
+              <div>
+                <div className="location-box">
+                  <div className="location">
+                  {weather.location.name} , {weather.location.country}
+                  </div>
+                    <div className="date">
+                      {dateBuilder(new Date())}
+                      {/* review this */}
+                <div className="weather-box">
+                    <div className="temp"> 
+                      {weather.current.temp_c}°C
+                  </div>
+                    <div className="weather"> 
+                      {weather.current.condition.text}
+                  </div>
+                </div>
+                    </div>
+                  </div>
+              <div className = 'forecast'>
+                <h2>7 day forecast</h2>
               </div>
-                <div className="date">
-                  {dateBuilder(new Date())}
-                  {/* review this */}
-            <div className="weather-box">
-                <div className="temp"> 
-                  {weather.current.temp_c}°C
-               </div>
-                <div className="weather"> 
-                  {weather.current.condition.text}
-              </div>
-            </div>
+              <div className = 'forecastBox'>
+                <div className = "days">
+                  {/* passing in the value of the date string from the API data and converting it using the dayBuilder function */}
+                  <h3>Day</h3>
+                <div> {dayBuilder(new Date(forecast.forecast.forecastday[0].date))}</div>
+                <div> {dayBuilder(new Date(forecast.forecast.forecastday[1].date))}</div>
+                <div> {dayBuilder(new Date(forecast.forecast.forecastday[2].date))}</div>              
+                <div> {dayBuilder(new Date(forecast.forecast.forecastday[3].date))}</div>
+                <div> {dayBuilder(new Date(forecast.forecast.forecastday[4].date))}</div>
+                <div> {dayBuilder(new Date(forecast.forecast.forecastday[5].date))}</div>
+                <div> {dayBuilder(new Date(forecast.forecast.forecastday[6].date))}</div>
+
+                </div>
+                <div className = "maxTemp">
+                <h3>Max </h3>
+                  <div>{forecast.forecast.forecastday[0].day.maxtemp_c}°C </div>
+                  <div>{forecast.forecast.forecastday[1].day.maxtemp_c}°C </div>
+                  <div>{forecast.forecast.forecastday[2].day.maxtemp_c}°C </div>
+                  <div>{forecast.forecast.forecastday[3].day.maxtemp_c}°C </div>
+                  <div>{forecast.forecast.forecastday[4].day.maxtemp_c}°C </div>
+                  <div>{forecast.forecast.forecastday[5].day.maxtemp_c}°C </div>
+                  <div>{forecast.forecast.forecastday[6].day.maxtemp_c}°C </div>
+                </div>
+                <div className = "minTemp">
+                <h3>Min</h3>
+                <div>{forecast.forecast.forecastday[0].day.mintemp_c}°C </div>
+                  <div>{forecast.forecast.forecastday[1].day.mintemp_c}°C</div>
+                  <div>{forecast.forecast.forecastday[2].day.mintemp_c}°C </div>
+                  <div>{forecast.forecast.forecastday[3].day.mintemp_c}°C </div>
+                  <div>{forecast.forecast.forecastday[4].day.mintemp_c}°C </div>
+                  <div>{forecast.forecast.forecastday[5].day.mintemp_c}°C </div>
+                  <div>{forecast.forecast.forecastday[6].day.mintemp_c}°C </div>
                 </div>
               </div>
-          <div className = 'forecast'>
-            <h2>7 day forecast</h2>
-          </div>
-          <div className = 'forecastBox'>
-             <div className = "days">
-              {/* passing in the value of the date string from the API data and converting it using the dayBuilder function */}
-              <h3>Day</h3>
-             <div> {dayBuilder(new Date(forecast.forecast.forecastday[0].date))}</div>
-             <div> {dayBuilder(new Date(forecast.forecast.forecastday[1].date))}</div>
-             <div> {dayBuilder(new Date(forecast.forecast.forecastday[2].date))}</div>              
-             <div> {dayBuilder(new Date(forecast.forecast.forecastday[3].date))}</div>
-             <div> {dayBuilder(new Date(forecast.forecast.forecastday[4].date))}</div>
-             <div> {dayBuilder(new Date(forecast.forecast.forecastday[5].date))}</div>
-             <div> {dayBuilder(new Date(forecast.forecast.forecastday[6].date))}</div>
-
-             </div>
-             <div className = "maxTemp">
-             <h3>Max </h3>
-              <div>{forecast.forecast.forecastday[0].day.maxtemp_c}°C </div>
-              <div>{forecast.forecast.forecastday[1].day.maxtemp_c}°C </div>
-              <div>{forecast.forecast.forecastday[2].day.maxtemp_c}°C </div>
-              <div>{forecast.forecast.forecastday[3].day.maxtemp_c}°C </div>
-              <div>{forecast.forecast.forecastday[4].day.maxtemp_c}°C </div>
-              <div>{forecast.forecast.forecastday[5].day.maxtemp_c}°C </div>
-              <div>{forecast.forecast.forecastday[6].day.maxtemp_c}°C </div>
-             </div>
-             <div className = "minTemp">
-             <h3>Min</h3>
-             <div>{forecast.forecast.forecastday[0].day.mintemp_c}°C </div>
-              <div>{forecast.forecast.forecastday[1].day.mintemp_c}°C</div>
-              <div>{forecast.forecast.forecastday[2].day.mintemp_c}°C </div>
-              <div>{forecast.forecast.forecastday[3].day.mintemp_c}°C </div>
-              <div>{forecast.forecast.forecastday[4].day.mintemp_c}°C </div>
-              <div>{forecast.forecast.forecastday[5].day.mintemp_c}°C </div>
-              <div>{forecast.forecast.forecastday[6].day.mintemp_c}°C </div>
-             </div>
-          </div>
+          </div>):('')}
           </main>
     </div>
   );
