@@ -50,11 +50,11 @@ function App() {
 
 const handleChange = (e) => {
   setQuery(e.target.value);
-  localStorage.setItem("inputValue", e.target.value);
+//   localStorage.setItem("inputValue", e.target.value);
 }
-useEffect(() => {
-  setQuery(localStorage.getItem("inputValue"));
-}, []);
+// useEffect(() => {
+//   setQuery(localStorage.getItem("inputValue"));
+// }, []);
 
   const dateBuilder = (date) =>{
   let months = ["January","February","March","April","May","June","July",
