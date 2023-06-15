@@ -27,7 +27,7 @@ function App() {
       .then(res => res.json())
       .then(result =>{
         setForecast(result);
-        console.log(result.forecast);
+        console.log(result);
         // console.log(result.forecast.forecastday[0]);
       });
 
@@ -86,7 +86,7 @@ const handleChange = (e) => {
               value={query}
               onKeyPress={search}></input>
             </div>
-            {(typeof weather.current != "undefined") ? (
+            {(typeof weather.location != "undefined") ? (
               <div>
                 <div className="location-box">
                   <div className="location">
@@ -142,7 +142,8 @@ const handleChange = (e) => {
                   <div>{forecast.forecast.forecastday[6].day.mintemp_c}°C </div>
                 </div>
               </div>
-          </div>):('')}
+          </div>
+          ):('')}
           </main>
     </div>
   );
