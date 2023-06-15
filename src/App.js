@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 const api = {
   key: "97e4e3c8505f4004b5815833230306",
-  base: "http://api.weatherapi.com/v1/current.json"
+  base: "https://api.weatherapi.com/v1/current.json"
 }
 const forecastAPI = {
   key:  "97e4e3c8505f4004b5815833230306",
-  base: "http://api.weatherapi.com/v1/forecast.json"
+  base: "https://api.weatherapi.com/v1/forecast.json"
 }
 function App() {
   const [query, setQuery] = useState('');
