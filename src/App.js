@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 const api = {
   key: "97e4e3c8505f4004b5815833230306",
-  base: "https://api.weatherapi.com/v1/current.json"
+  base: "http://api.weatherapi.com/v1/current.json"
 }
 const forecastAPI = {
   key:  "97e4e3c8505f4004b5815833230306",
-  base: "https://api.weatherapi.com/v1/forecast.json"
+  base: "http://api.weatherapi.com/v1/forecast.json"
 }
 function App() {
   const [query, setQuery] = useState('');
@@ -20,7 +20,7 @@ function App() {
       .then(result =>{
          setWeather(result);
          setQuery('');
-        //  console.log(result);
+         console.log(result);
       
       });
       fetch(`${forecastAPI.base}?key=${forecastAPI.key}&q=${query}&days=7`)
@@ -28,7 +28,7 @@ function App() {
       .then(result =>{
         setForecast(result);
         console.log(result);
-        // console.log(result.forecast.forecastday[0]);
+        console.log(result.forecast.forecastday[0]);
       });
 
     }
@@ -49,11 +49,11 @@ function App() {
 
 const handleChange = (e) => {
   setQuery(e.target.value);
-//   localStorage.setItem("inputValue", e.target.value);
+  localStorage.setItem("inputValue", e.target.value);
 }
-// useEffect(() => {
-//   setQuery(localStorage.getItem("inputValue"));
-// }, []);
+useEffect(() => {
+  setQuery(localStorage.getItem("inputValue"));
+}, []);
 
   const dateBuilder = (date) =>{
   let months = ["January","February","March","April","May","June","July",
@@ -105,7 +105,7 @@ const handleChange = (e) => {
                 </div>
                     </div>
                   </div>
-              <div className = 'forecast'>
+             <div className = 'forecast'>
                 <h2>7 day forecast</h2>
               </div>
               <div className = 'forecastBox'>
@@ -115,10 +115,10 @@ const handleChange = (e) => {
                 <div> {dayBuilder(new Date(forecast.forecast.forecastday[0].date))}</div>
                 <div> {dayBuilder(new Date(forecast.forecast.forecastday[1].date))}</div>
                 <div> {dayBuilder(new Date(forecast.forecast.forecastday[2].date))}</div>              
-                <div> {dayBuilder(new Date(forecast.forecast.forecastday[3].date))}</div>
-                <div> {dayBuilder(new Date(forecast.forecast.forecastday[4].date))}</div>
-                <div> {dayBuilder(new Date(forecast.forecast.forecastday[5].date))}</div>
-                <div> {dayBuilder(new Date(forecast.forecast.forecastday[6].date))}</div>
+                {/* <div> {dayBuilder(new Date(forecast.forecast.forecastday[3].date))}</div> */}
+                {/* <div> {dayBuilder(new Date(forecast.forecast.forecastday[4].date))}</div> */}
+                {/* <div> {dayBuilder(new Date(forecast.forecast.forecastday[5].date))}</div> */}
+                {/* <div> {dayBuilder(new Date(forecast.forecast.forecastday[6].date))}</div> */}
 
                 </div>
                 <div className = "maxTemp">
@@ -126,24 +126,24 @@ const handleChange = (e) => {
                   <div>{forecast.forecast.forecastday[0].day.maxtemp_c}°C </div>
                   <div>{forecast.forecast.forecastday[1].day.maxtemp_c}°C </div>
                   <div>{forecast.forecast.forecastday[2].day.maxtemp_c}°C </div>
-                  <div>{forecast.forecast.forecastday[3].day.maxtemp_c}°C </div>
+                  {/* <div>{forecast.forecast.forecastday[3].day.maxtemp_c}°C </div>
                   <div>{forecast.forecast.forecastday[4].day.maxtemp_c}°C </div>
                   <div>{forecast.forecast.forecastday[5].day.maxtemp_c}°C </div>
-                  <div>{forecast.forecast.forecastday[6].day.maxtemp_c}°C </div>
+                  <div>{forecast.forecast.forecastday[6].day.maxtemp_c}°C </div> */}
                 </div>
                 <div className = "minTemp">
                 <h3>Min</h3>
                 <div>{forecast.forecast.forecastday[0].day.mintemp_c}°C </div>
                   <div>{forecast.forecast.forecastday[1].day.mintemp_c}°C</div>
                   <div>{forecast.forecast.forecastday[2].day.mintemp_c}°C </div>
-                  <div>{forecast.forecast.forecastday[3].day.mintemp_c}°C </div>
+                  {/* <div>{forecast.forecast.forecastday[3].day.mintemp_c}°C </div>
                   <div>{forecast.forecast.forecastday[4].day.mintemp_c}°C </div>
                   <div>{forecast.forecast.forecastday[5].day.mintemp_c}°C </div>
-                  <div>{forecast.forecast.forecastday[6].day.mintemp_c}°C </div>
+                  <div>{forecast.forecast.forecastday[6].day.mintemp_c}°C </div> */}
                 </div>
               </div>
           </div>
-          ):('')}
+          ):('')}}
           </main>
     </div>
   );
