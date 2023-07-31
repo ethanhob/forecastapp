@@ -17,7 +17,7 @@ background-position: center center;
 }
 
 main{
-  height: 100vh;
+  height: 200vh;
   background-image: linear-gradient(to bottom, rgba(97, 124, 128, 0.8), rgba(0,0,0,0.1));
   padding: 30px;
 }

@@ -106,7 +106,7 @@ useEffect(() => {
                     </div>
                   </div>
              <div className = 'forecast'>
-                <h2>7 day forecast</h2>
+                {/* <h2>7 day forecast</h2> */}
               </div>
               <div className = 'forecastBox'>
                 <div className = "days">
@@ -122,7 +122,7 @@ useEffect(() => {
 
                 </div>
                 <div className = "maxTemp">
-                <h3>Max </h3>
+                {/* <h3>Max </h3> */}
                   {/* <div>{forecast.forecast.forecastday[0].day.maxtemp_c}°C </div>
                   <div>{forecast.forecast.forecastday[1].day.maxtemp_c}°C </div>
                   <div>{forecast.forecast.forecastday[2].day.maxtemp_c}°C </div> */}
@@ -132,7 +132,7 @@ useEffect(() => {
                   <div>{forecast.forecast.forecastday[6].day.maxtemp_c}°C </div> */}
                 </div>
                 <div className = "minTemp">
-                <h3>Min</h3>
+                {/* <h3>Min</h3> */}
                 {/* <div>{forecast.forecast.forecastday[0].day.mintemp_c}°C </div>
                   <div>{forecast.forecast.forecastday[1].day.mintemp_c}°C</div>
                   <div>{forecast.forecast.forecastday[2].day.mintemp_c}°C </div> */}
