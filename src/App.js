@@ -111,7 +111,7 @@ useEffect(() => {
               <div className = 'forecastBox'>
                 <div className = "days">
                   {/* passing in the value of the date string from the API data and converting it using the dayBuilder function */}
-                  <h3>Day</h3>
+                  {/* <h3>Day</h3> */}
                 {/* <div> {dayBuilder(new Date(forecast.forecast.forecastday[0].date))}</div>
                 <div> {dayBuilder(new Date(forecast.forecast.forecastday[1].date))}</div>
                 <div> {dayBuilder(new Date(forecast.forecast.forecastday[2].date))}</div>               */}
