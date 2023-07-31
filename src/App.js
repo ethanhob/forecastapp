@@ -112,9 +112,9 @@ useEffect(() => {
                 <div className = "days">
                   {/* passing in the value of the date string from the API data and converting it using the dayBuilder function */}
                   <h3>Day</h3>
-                <div> {dayBuilder(new Date(forecast.forecast.forecastday[0].date))}</div>
+                {/* <div> {dayBuilder(new Date(forecast.forecast.forecastday[0].date))}</div>
                 <div> {dayBuilder(new Date(forecast.forecast.forecastday[1].date))}</div>
-                <div> {dayBuilder(new Date(forecast.forecast.forecastday[2].date))}</div>              
+                <div> {dayBuilder(new Date(forecast.forecast.forecastday[2].date))}</div>               */}
                 {/* <div> {dayBuilder(new Date(forecast.forecast.forecastday[3].date))}</div> */}
                 {/* <div> {dayBuilder(new Date(forecast.forecast.forecastday[4].date))}</div> */}
                 {/* <div> {dayBuilder(new Date(forecast.forecast.forecastday[5].date))}</div> */}
@@ -123,9 +123,9 @@ useEffect(() => {
                 </div>
                 <div className = "maxTemp">
                 <h3>Max </h3>
-                  <div>{forecast.forecast.forecastday[0].day.maxtemp_c}°C </div>
+                  {/* <div>{forecast.forecast.forecastday[0].day.maxtemp_c}°C </div>
                   <div>{forecast.forecast.forecastday[1].day.maxtemp_c}°C </div>
-                  <div>{forecast.forecast.forecastday[2].day.maxtemp_c}°C </div>
+                  <div>{forecast.forecast.forecastday[2].day.maxtemp_c}°C </div> */}
                   {/* <div>{forecast.forecast.forecastday[3].day.maxtemp_c}°C </div>
                   <div>{forecast.forecast.forecastday[4].day.maxtemp_c}°C </div>
                   <div>{forecast.forecast.forecastday[5].day.maxtemp_c}°C </div>
@@ -133,9 +133,9 @@ useEffect(() => {
                 </div>
                 <div className = "minTemp">
                 <h3>Min</h3>
-                <div>{forecast.forecast.forecastday[0].day.mintemp_c}°C </div>
+                {/* <div>{forecast.forecast.forecastday[0].day.mintemp_c}°C </div>
                   <div>{forecast.forecast.forecastday[1].day.mintemp_c}°C</div>
-                  <div>{forecast.forecast.forecastday[2].day.mintemp_c}°C </div>
+                  <div>{forecast.forecast.forecastday[2].day.mintemp_c}°C </div> */}
                   {/* <div>{forecast.forecast.forecastday[3].day.mintemp_c}°C </div>
                   <div>{forecast.forecast.forecastday[4].day.mintemp_c}°C </div>
                   <div>{forecast.forecast.forecastday[5].day.mintemp_c}°C </div>
@@ -143,7 +143,7 @@ useEffect(() => {
                 </div>
               </div>
           </div>
-          ):('')}}
+          ):('')}
           </main>
     </div>
   );
